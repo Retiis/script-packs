@@ -34,7 +34,7 @@ end
 
 loop = RunService.RenderStepped:Connect(function()
    local UserInputService = game:GetService("UserInputService")
-   local pressed = UserInputService:IsKeyDown(Enum.KeyCode.E) --UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2) --Enum.UserInputType.MouseButton2
+   local pressed = UserInputService:IsKeyDown(Enum.KeyCode.Q) --UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2) --Enum.UserInputType.MouseButton2
    local localPlay = game.Players.localPlayer.Character
    local cam = workspace.CurrentCamera
    local zz = workspace.CurrentCamera.ViewportSize/2
