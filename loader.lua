@@ -33,7 +33,7 @@ textlabel.Text = "_G.scriptPacks.settings initialised! (2/4)"
 repeat task.wait() until _G.scriptPacks.skipGameLoading == true or game:IsLoaded();
 textlabel.Text = "game loaded (3/4)"
 
-local genres = loadstring(game:HttpGet("https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genre-json.lua"))();
+local genres = game:HttpGet("https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genre-json.lua");
 
 if _G.scriptPacks.genreToLoad == "custom" and _G.scriptPacks.customScripts ~= nil then
 	textlabel.Text = "custom genre selected, trying to load scripts"
