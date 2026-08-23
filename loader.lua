@@ -55,7 +55,7 @@ local genres = {
 	mm2 = {"https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genres/mm2.lua"} -- alias
 }
 
-if not success or type(genres) ~= "table" then
+if type(genres) ~= "table" then
     textlabel.Text = "Failed to load genres list!"
     warn("genre-json.lua error:", genres)
     return
