@@ -55,12 +55,6 @@ local genres = {
 	mm2 = {"https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genres/mm2.lua"} -- alias
 }
 
-if type(genres) ~= "table" then
-    textlabel.Text = "Failed to load genres list!"
-    warn("genre-json.lua error:", genres)
-    return
-end
-
 if _G.scriptPacks.genreToLoad == "custom" and type(_G.scriptPacks.customScripts) == "table" then
     textlabel.Text = "custom genre selected, trying to load scripts"
     for i, v in pairs(_G.scriptPacks.customScripts) do
