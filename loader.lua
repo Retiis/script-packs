@@ -48,9 +48,12 @@ textlabel.Text = "_G.scriptPacks.settings initialised! (2/4)"
 repeat task.wait() until _G.scriptPacks.skipGameLoading == true or game:IsLoaded()
 textlabel.Text = "game loaded (3/4)"
 
-local success, genres = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genre-json.lua"))()
-end)
+local genres = {
+	pvp = {"https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genres/pvp.lua"},
+	universal = {"https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genres/universal.lua"},
+	mmtwo = {"https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genres/mm2.lua"},
+	mm2 = {"https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genres/mm2.lua"} -- alias
+}
 
 if not success or type(genres) ~= "table" then
     textlabel.Text = "Failed to load genres list!"
