@@ -24,12 +24,13 @@ if _G.scriptPacks == nil then textlabel.Text = "_G.scriptPacks is missing!" retu
 if _G.scriptPacks.skipGameLoading == nil then textlabel.Text = "_G.scriptPacks.skipGameLoading is missing!" return end;
 if _G.scriptPacks.delayBetweenExecutingScripts == nil then textlabel.Text = "_G.scriptPacks.delayBetweenExecutingScripts is missing!" return end;
 if _G.scriptPacks.genreToLoad == nil then textlabel.Text = "_G.scriptPacks.genreToLoad is missing!" return end;
+print("_G.scriptPacks are all good")
 
-if _G.scriptPacksAlreadyExecutedInOneGame == 1 then textlabel.Text = "script-packs was already executed in this session!" return end 
+if _G.scriptPacksAlreadyExecutedInOneGame == 1 then textlabel.Text = "script-packs was already executed in this session!" print("scriptPacks already executed") return end 
 
 textlabel.Text = "_G.scriptPacks initialised! (1/4)"
 textlabel.Text = "_G.scriptPacks.settings initialised! (2/4)"
-repeat task.wait() until game:IsLoaded() or _G.scriptPacks.skipGameLoading == true;
+repeat task.wait() until _G.scriptPacks.skipGameLoading == true or game:IsLoaded();
 textlabel.Text = "game loaded (3/4)"
 
 local genres = loadstring(game:HttpGet("https://raw.githubusercontent.com/RetiiAyo/script-packs/main/genre-json.lua"))();
